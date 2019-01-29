@@ -1,0 +1,77 @@
+.container.projects {
+  background: #E1E5E9;
+  height: 700px;
+  max-width: 100%;
+}
+@media screen and (min-width: 200px) and (max-width: 700px) {
+  .container.projects {
+    height: 1400px;
+  }
+  #project-list > li {
+    margin: 0px;
+    padding: 0px;
+  }
+  #project-list {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .container.projects {
+    height: 1400px;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1399px) {
+  .container.projects {
+    height: 1450px;
+  }
+}
+#project-list > li {
+  margin: 20px;
+}
+.project {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  list-style: none;
+  display: inline-block;
+}
+.projects-title {
+  font-family: 'Lato', sans-serif;
+}
+.project-name {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.project-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.project-description h2 {
+  font-size: 24px;
+}
+.project-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.project-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.project-link:hover {
+  opacity: 0.1;
+}

@@ -1,0 +1,67 @@
+.intro-content {
+  padding: 300px;
+  background-color: #fffdfa;
+}
+.intro-title {
+  width: 900px
+}
+.intro-title h1 {
+  font-size: 6em;
+}
+.intro-sub-title p {
+  font-size: 2.5em;
+}
+@media screen and (min-width: 300px) and (max-width: 550px) {
+  .intro-content {
+    padding: 100px;
+  }
+  .intro-title {
+    margin-left: -58px;
+    width: 400px;
+  }
+  .intro-title h1 {
+    font-size: 2.5em;
+  }
+  .intro-sub-title {
+    margin-left: -58px;
+  }
+  .intro-sub-title p {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 551px) and (max-width: 650px) {
+  .intro-content {
+    padding: 150px;
+  }
+  .intro-title {
+    margin-left: -108px;
+    width: 500px;
+  }
+  .intro-title h1 {
+    font-size: 3.5em;
+  }
+  .intro-sub-title {
+    margin-left: -108px;
+  }
+  .intro-sub-title p {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 651px) and (max-width: 1050px) {
+  .intro-content {
+    padding: 250px;
+  }
+  .intro-title {
+    margin-left: -158px;
+    width: 700px;
+  }
+  .intro-title h1 {
+    font-size: 5em;
+  }
+  .intro-sub-title {
+    margin-left: -158px;
+  }
+  .intro-sub-title p {
+    font-size: 1.7em;
+  }
+}

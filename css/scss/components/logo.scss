@@ -1,0 +1,25 @@
+.navbar-wagon-brand-outside {
+  display: block;
+  position: absolute;
+  padding: 5px;
+  left: 30px;
+  top: 10px;
+  height: 50px;
+  font-size: 35px;
+  color: black;
+  background: white;
+  border-radius: 5px;
+  /*letter-spacing: -3px;*/
+  letter-spacing: 3px;
+}
+.navbar-wagon-brand-outside:hover {
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+.hide-logo {
+  display: none;
+}
+.show-logo {
+  display: block;
+}

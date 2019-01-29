@@ -1,0 +1,32 @@
+.hamburger {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 28px;
+  top: 7px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+}
+.hamburger-nav {
+  right: 24px;
+  cursor: pointer;
+}
+.line {
+  border-bottom: 2px solid black;
+  width: 45px;
+  padding: 5px;
+}
+.hamburger-nav .line {
+  border-bottom: 2px solid black;
+}
+.hide-hamburger {
+  display: none;
+}
+.show-hamburger {
+  display: block;
+}
