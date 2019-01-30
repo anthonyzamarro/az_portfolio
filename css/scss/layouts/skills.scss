@@ -3,25 +3,32 @@
   font-family: 'Lato', sans-serif;
   background: #363837;
 }
+h2.skills-title {
+  color: #fff;
+}
 .skills-list {
   margin-left: 50px;
   padding: 20px;
 }
-.skills-list > li {
-  display: inline-flex;
-  flex-direction: column;
-  word-wrap: normal;
-  text-align: center;
-  padding-right: 100px;
-  align-items: center;
-  color: #ddd;
-  flex: 0 0 15px;
-  font-family: 'Vollkorn', serif;
+.skills-list {
+  li {
+    display: inline-flex;
+    flex-direction: column;
+    word-wrap: normal;
+    text-align: center;
+    padding-right: 100px;
+    align-items: center;
+    color: #ddd;
+    flex: 0 0 15px;
+    font-family: 'Vollkorn', serif;
+  }
 }
 .skills-image {
   opacity: 0.7;
   height: 50px;
 }
-.skills-image:hover {
-  opacity: 1;
+.skills-image {
+  &:hover {
+    opacity: 1;
+  }
 }

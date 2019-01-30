@@ -2,20 +2,19 @@
   background: #91A1AB;
 }
 .contact-section {
-  display: inline-flex;
+  display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
-#profile-pic {
-  padding: 0px;
-  margin: 0px;
-  // border-radius: 50%;
+.profile-pic {
   width: 70%;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 .contact-description {
   width: 80%;
   font-size: 37px;
-  order: 1;
+  // order: 1;
   font-family: 'Vollkorn', serif;
 }

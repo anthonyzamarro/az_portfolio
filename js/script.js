@@ -112,11 +112,11 @@ buildProjectList()
 const aboutNav = document.getElementById('about-nav');
 const about = document.querySelector('.about');
 const skillsNav = document.getElementById('skills-nav');
-const skills = document.querySelector('.skills-section');
+const skills = document.querySelector('.skills');
 const projectsNav = document.getElementById('projects-nav');
 const projectsSection = document.querySelector('.projects');
-const eduNav = document.getElementById('education-nav');
-const eduSection = document.querySelector('.education');
+// const eduNav = document.getElementById('education-nav');
+// const eduSection = document.querySelector('.education');
 const contactNav = document.getElementById('contact-nav');
 const contact = document.querySelector('.contact');
 
