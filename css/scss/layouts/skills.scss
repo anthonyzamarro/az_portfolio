@@ -1,14 +1,7 @@
 .skills {
-  max-width: 100%;
-  margin: 0px;
-  padding: 0px;
-  color: white;
+  color: #fff;
   font-family: 'Lato', sans-serif;
-}
-.skills-section {
-  height: 600px;
   background: #363837;
-  padding: 50px 0px 30px 50px;
 }
 .skills-list {
   margin-left: 50px;
@@ -31,40 +24,4 @@
 }
 .skills-image:hover {
   opacity: 1;
-}
-
-@media screen and (max-width: 765px) {
-  .skills-section {
-    padding: 40px;
-    height: 700px;
-  }
-  .skills-list {
-    margin-left: 5px;
-  }
-  .skills-list > li {
-    display: block;
-    flex-wrap: wrap;
-    padding: 0px;
-  }
-  .front > h2, .back > h2, .side > h2 {
-    text-align: center;
-  }
-  .skills-image {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 766px) and (max-width: 903px) {
-  .skills-list {
-    margin: 0px;
-  }
-  .side > ul.skills-list > li {
-    padding-right: 35px;
-  }
-}
-
-@media screen and (min-width: 904px) and (max-width: 1210px) {
-  .side > ul.skills-list > li {
-    padding-right: 50px;
-  }
 }

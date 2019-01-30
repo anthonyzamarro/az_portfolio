@@ -1,30 +1,7 @@
-.container.projects {
+.projects {
   background: #E1E5E9;
-  height: 700px;
+  // height: 700px;
   max-width: 100%;
-}
-@media screen and (min-width: 200px) and (max-width: 700px) {
-  .container.projects {
-    height: 1400px;
-  }
-  #project-list > li {
-    margin: 0px;
-    padding: 0px;
-  }
-  #project-list {
-    margin: 0px;
-    padding: 0px;
-  }
-}
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .container.projects {
-    height: 1400px;
-  }
-}
-@media screen and (min-width: 901px) and (max-width: 1399px) {
-  .container.projects {
-    height: 1450px;
-  }
 }
 #project-list > li {
   margin: 20px;
@@ -38,9 +15,6 @@
   position: relative;
   list-style: none;
   display: inline-block;
-}
-.projects-title {
-  font-family: 'Lato', sans-serif;
 }
 .project-name {
   position: absolute;
