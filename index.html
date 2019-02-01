@@ -13,8 +13,6 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- <script src="javascripts/application-93de88c9.js"></script> -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu|Ubuntu+Condensed|Vollkorn" rel="stylesheet">
 	<link rel='icon' href='images_src/az-logo.png' type='image/x-icon'/ >
@@ -24,16 +22,16 @@
   <!-- NAVBAR -->
   <div class="navbar hide">
     <!-- Logo -->
-    <a href="#" class="navbar-logo">
+    <a href="#" class="navbar-logo nav-item" data-id="logo">
       <img src="images/az-logo-medium_3x.png" alt="AZ logo">
     </a>
     <!-- Right Navigation -->
     <ul class="navbar-list">
-      <li class="nav-list-item" id="about-nav">About</li>
-      <li class="nav-list-item" id="skills-nav">Skills</li>
-      <li class="nav-list-item" id="projects-nav">Projects</li>
+      <li class="nav-list-item nav-item" id="about-nav" data-id="about">About</li>
+      <li class="nav-list-item nav-item" id="skills-nav" data-id="skills">Skills</li>
+      <li class="nav-list-item nav-item" id="projects-nav" data-id="projects">Projects</li>
       <!-- <li class="nav-list-item" id="education-nav">Education</li> -->
-      <li class="nav-list-item" id="contact-nav">Contact</li>
+      <li class="nav-list-item nav-item" id="contact-nav" data-id="contact">Contact</li>
       <!-- HAMBURGER ICON INSIDE NAV -->
       <div class="hamburger-nav">
         <div class="line"></div>
@@ -51,7 +49,7 @@
   </div>
 
   <!-- INTRO -->
-  <div class="intro">
+  <div class="intro" id="intro">
     <div class="intro-content">
       <h1 class="intro-title">Anthony Zamarro</h1>
       <div class="intro-sub-title">
@@ -60,7 +58,7 @@
     </div>
   </div>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container about-container">
       <h2 class="section-title about-title">About</h2>
       <div class="about-content">
@@ -73,7 +71,7 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section class="skills" id="skills">
     <div class="container skills-container">
       <h2 class="section-title skills-title">What I Use</h2>
       <div class="front">
@@ -115,14 +113,14 @@
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="container skills-container">
       <h1 class="section-title projects-title">Projects</h1>
       <ul id="project-list"></ul>
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="container skills-container">
       <h2 class="section-title contact-title">Contact</h2>
       <div class="contact-section">

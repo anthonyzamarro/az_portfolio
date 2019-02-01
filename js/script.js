@@ -43,14 +43,14 @@ hamburgerNav.addEventListener('click', () => {
 // PROJECT CAROUSEL
 
 const projects = [
-  {
-    "name": "WageFinder",
-    "alt": "image of wagefinder app",
-    "image": "images/wagefinder-image-medium_3x.png",
-    "url": "https://www.wagefinder.today/",
-    "description": "A mobile-only app that helps IT workers find out what they're worth.",
+  // {
+  //   "name": "WageFinder",
+  //   "alt": "image of wagefinder app",
+  //   "image": "images/wagefinder-image-medium_3x.png",
+  //   "url": "https://www.wagefinder.today/",
+  //   "description": "A mobile-only app that helps IT workers find out what they're worth.",
 
-  },
+  // },
   {
     "name": "Arcade Game",
     "alt": "image of arcade game app",
@@ -132,10 +132,12 @@ const buildProjectList = () => {
     projectList.insertAdjacentHTML('afterbegin',
       `
       <li class="project">
-          <div class="project-name">${project.name}</div>
           <a class="project-link" href="${project.url}" target="_blank">
             <img class="project-image" src="${project.image}" alt="${project.alt}">
-            <div class="project-description"><span>${project.description}</span></div>
+            <div class="project-description">
+              <div class="project-name">${project.name}</div>
+              <span>${project.description}</span>
+            </div>
           </a>
         </li>`
       );
@@ -145,43 +147,54 @@ const buildProjectList = () => {
 buildProjectList()
 
 // SLOW SCROLL
-const aboutNav = document.getElementById('about-nav');
-const about = document.querySelector('.about');
-const skillsNav = document.getElementById('skills-nav');
-const skills = document.querySelector('.skills');
-const projectsNav = document.getElementById('projects-nav');
-const projectsSection = document.querySelector('.projects');
-// const eduNav = document.getElementById('education-nav');
-// const eduSection = document.querySelector('.education');
-const contactNav = document.getElementById('contact-nav');
-const contact = document.querySelector('.contact');
-
+// const logo = document.querySelector('.navbar-logo');
+// const aboutNav = document.getElementById('about-nav');
+// const about = document.querySelector('.about');
+// const skillsNav = document.getElementById('skills-nav');
+// const skills = document.querySelector('.skills');
+// const projectsNav = document.getElementById('projects-nav');
+// const projectsSection = document.querySelector('.projects');
+// // const eduNav = document.getElementById('education-nav');
+// // const eduSection = document.querySelector('.education');
+// const contactNav = document.getElementById('contact-nav');
+// const contact = document.querySelector('.contact');
+const navItem = document.querySelectorAll('.nav-item');
 const slowScrolls = () => {
-  aboutNav.addEventListener('click', () => {
-    about.scrollIntoView({
-      behavior: 'smooth'
+  navItem.forEach(item => {
+    item.addEventListener('click', (e) => {
+      let dataId = e.target.dataset.id;
+      let sectionId = document.querySelector(`#${dataId}`);
+      sectionId.scrollIntoView({
+        behavior: "smooth"
+      });
     });
-  });
-  projectsNav.addEventListener('click', () => {
-    projectsSection.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-  contactNav.addEventListener('click', () => {
-    contact.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-  skillsNav.addEventListener('click', () => {
-    skills.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+  })
+  // aboutNav.addEventListener('click', () => {
+  //   about.scrollIntoView({
+  //     behavior: 'smooth'
+  //   });
+  // });
+  // projectsNav.addEventListener('click', () => {
+  //   projectsSection.scrollIntoView({
+  //     behavior: 'smooth'
+  //   });
+  // });
+  // contactNav.addEventListener('click', () => {
+  //   contact.scrollIntoView({
+  //     behavior: 'smooth'
+  //   });
+  // });
+  // skillsNav.addEventListener('click', () => {
+  //   skills.scrollIntoView({
+  //     behavior: 'smooth'
+  //   });
+  // });
   // eduNav.addEventListener('click', () => {
   //   eduSection.scrollIntoView({
   //     behavior: 'smooth'
   //   });
   // });
+
 }
 
 slowScrolls()

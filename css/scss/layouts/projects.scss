@@ -47,38 +47,11 @@
     font-size: 16px;
   }
 }
-// .project-name {
-//   font-size: 16px;
-//   color: #000;
-//   text-transform: uppercase;
-//   margin-bottom: 4px;
-//   // text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-// }
-// .project-description {
-//   position: absolute;
-//   bottom: 60px;
-//   left: 10px;
-//   font-size: 20px;
-//   color: #fff;
-//   visibility: hidden;
-//   opacity: 0;
-//   /* transition effect. not necessary */
-//   transition: opacity .2s, visibility .2s;
-// }
-// .project-description h2 {
-//   font-size: 24px;
-// }
-// .project-description p {
-//   font-size: 14px;
-//   font-weight: lighter;
-// }
-// .project-link {
-//   width: 100%;
-//   position: relative;
-//   &:hover {
-//     .project-description {
-//       opacity: 1;
-//       visibility: visible;
-//     }
-//   }
-// }
+.project-name {
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
