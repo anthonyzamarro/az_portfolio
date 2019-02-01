@@ -3,49 +3,82 @@
   // height: 700px;
   max-width: 100%;
 }
-#project-list > li {
-  margin: 20px;
-}
 .project {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
   position: relative;
   list-style: none;
   display: inline-block;
-}
-.project-name {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.project-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.project-description h2 {
-  font-size: 24px;
-}
-.project-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+  margin: 12px;
 }
 .project-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
+  height: 300px;
+  width: 400px;
+  overflow: hidden;
+  &:hover {
+    .project-image {
+      opacity: 0.3;
+    }
+    .project-description {
+      opacity: 1;
+    }
+  }
+}
+.project-image {
+  opacity: 1;
+  display: block;
+  height: 150px;
+  width: 350px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.project-description {
+  transition: .5s ease;
   opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  span {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+  }
 }
-.project-link:hover {
-  opacity: 0.1;
-}
+// .project-name {
+//   font-size: 16px;
+//   color: #000;
+//   text-transform: uppercase;
+//   margin-bottom: 4px;
+//   // text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+// }
+// .project-description {
+//   position: absolute;
+//   bottom: 60px;
+//   left: 10px;
+//   font-size: 20px;
+//   color: #fff;
+//   visibility: hidden;
+//   opacity: 0;
+//   /* transition effect. not necessary */
+//   transition: opacity .2s, visibility .2s;
+// }
+// .project-description h2 {
+//   font-size: 24px;
+// }
+// .project-description p {
+//   font-size: 14px;
+//   font-weight: lighter;
+// }
+// .project-link {
+//   width: 100%;
+//   position: relative;
+//   &:hover {
+//     .project-description {
+//       opacity: 1;
+//       visibility: visible;
+//     }
+//   }
+// }

@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 				{
 					name: 'medium',
 					width: 300,
+					height: 150,
 					suffix: '_3x',
 					quality: 40
 				},
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
 		},
 				files: [{
 					expand: true,
-					src: ['*.{gif,jpg,png}'],
+					src: ['*.{gif,jpg,png,svg}'],
 					cwd: 'images_src/',
 					dest: 'images/'
 				}]

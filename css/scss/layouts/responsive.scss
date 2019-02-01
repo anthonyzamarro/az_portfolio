@@ -1,0 +1,60 @@
+@media screen and (max-width: 560px) {
+	section {
+		padding: 25px 15px;
+	}
+	.intro-content {
+		padding: 25px 15px;
+		.intro-title {
+			font-size: 3em;
+		}
+		.intro-sub-title {
+			font-size: 18px;
+		}
+	}
+	.about-content {
+		p {
+			font-size: 20px;
+		}
+	}
+	.skills {
+		padding: 25px 15px;
+		.skills-list {
+			margin-left: 0px;
+			padding: 0;
+			li {
+				padding-right: 30px;
+				padding: 10px 10px 10px 0px;
+			}
+		}
+	}
+	.projects {
+		padding: 0;
+		li {
+			margin: 12px 0 12px 0 ;
+		}
+	}
+	.contact {
+		padding: 25px 15px;
+		.contact-section {
+			flex-direction: column;
+			.profile-picture {
+				order: 1;
+				margin: 12px 0 0 0;
+				.profile-pic {
+					width: 300px;
+				}
+			}
+			.contact-description {
+				order: 0;
+				width: 94%;
+				font-size: 28px;
+			}
+		}
+	}
+	.footer {
+		padding: 0 15px;
+		.footer-copyright {
+			font-size: 13px;
+		}
+	}
+}

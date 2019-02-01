@@ -1,5 +1,7 @@
-.container.contact {
+.contact {
   background: #91A1AB;
+  padding: 50px 0;
+  min-height: 150px;
 }
 .contact-section {
   display: flex;
@@ -15,6 +17,5 @@
 .contact-description {
   width: 80%;
   font-size: 37px;
-  // order: 1;
   font-family: 'Vollkorn', serif;
 }

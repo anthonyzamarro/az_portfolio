@@ -129,6 +129,9 @@
 .footer .fa-heart {
   color: #D23333; }
 
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .footer-copyright {
+    font-size: 10px; } }
 .intro-content {
   background-color: #fffdfa;
   padding: 300px; }
@@ -142,9 +145,7 @@
 .skills {
   color: #fff;
   font-family: 'Lato', sans-serif;
-  background: #363837;
-  padding: 50px 0;
-  min-height: 150px; }
+  background: #363837; }
 
 h2.skills-title {
   color: #fff; }
@@ -182,10 +183,8 @@ h2.skills-title {
     margin: 12px 0;
     font-size: 32px; }
 
-.contact {
-  background: #91A1AB;
-  padding: 50px 0;
-  min-height: 150px; }
+.container.contact {
+  background: #91A1AB; }
 
 .contact-section {
   display: flex;
@@ -213,20 +212,16 @@ h2.skills-title {
   display: inline-block;
   margin: 12px; }
 
-.project-link {
-  height: 300px;
-  width: 400px;
-  overflow: hidden; }
-  .project-link:hover .project-image {
-    opacity: 0.3; }
-  .project-link:hover .project-description {
-    opacity: 1; }
+.project-link:hover .project-image {
+  opacity: 0.3; }
+.project-link:hover .project-description {
+  opacity: 1; }
 
 .project-image {
   opacity: 1;
   display: block;
-  height: 150px;
-  width: 350px;
+  width: 100%;
+  height: auto;
   transition: .5s ease;
   backface-visibility: hidden; }
 
@@ -276,52 +271,5 @@ section {
 .container {
   max-width: 1200px;
   margin: auto; }
-
-@media screen and (max-width: 560px) {
-  section {
-    padding: 25px 15px; }
-
-  .intro-content {
-    padding: 25px 15px; }
-    .intro-content .intro-title {
-      font-size: 3em; }
-    .intro-content .intro-sub-title {
-      font-size: 18px; }
-
-  .about-content p {
-    font-size: 20px; }
-
-  .skills {
-    padding: 25px 15px; }
-    .skills .skills-list {
-      margin-left: 0px;
-      padding: 0; }
-      .skills .skills-list li {
-        padding-right: 30px;
-        padding: 10px 10px 10px 0px; }
-
-  .projects {
-    padding: 0; }
-    .projects li {
-      margin: 12px 0 12px 0; }
-
-  .contact {
-    padding: 25px 15px; }
-    .contact .contact-section {
-      flex-direction: column; }
-      .contact .contact-section .profile-picture {
-        order: 1;
-        margin: 12px 0 0 0; }
-        .contact .contact-section .profile-picture .profile-pic {
-          width: 300px; }
-      .contact .contact-section .contact-description {
-        order: 0;
-        width: 94%;
-        font-size: 28px; }
-
-  .footer {
-    padding: 0 15px; }
-    .footer .footer-copyright {
-      font-size: 13px; } }
 
 /*# sourceMappingURL=style.css.map */
