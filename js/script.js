@@ -2,46 +2,23 @@
 const hamburger = document.querySelector('.hamburger');
 const hamburgerNav = document.querySelector('.hamburger-nav');
 const nav = document.querySelector('.navbar');
+// HAMBURGER ICON AND NAVBAR MOBILE
+const hamburgerMobile = document.querySelector('#hamburger-mobile');
+const hamburgerMobileNav = document.querySelector('#hamburger-mobile-nav');
+const navbarMobile = document.querySelector('#navbar-mobile');
 
-// const responsiveNav = () => {
-//  if (matchMedia) {
-//   const mq = window.matchMedia("(min-width: 700px)");
-//   mq.addListener(WidthChange);
-//   WidthChange(mq);
-//   }
-// };
-// function WidthChange(mq) {
-//   if (mq.matches) {
-//     hamburger.style.visibility = 'visible';
-//     hamburgerNav.style.visibility = 'visible';
-//     nav.style.visibility = 'visible';
-//   } else {
-//     // window width is less than 700px
-//     hamburger.style.visibility = 'hidden';
-//     hamburgerNav.style.visibility = 'hidden';
-//     nav.style.visibility = 'hidden';
-//   }
-
-// }
-
-// responsiveNav();
-
+// toggle hamburger and nav, show
 hamburger.addEventListener('click', () => {
-  hamburgerNav.classList.toggle('show-hamburger');
   hamburger.classList.toggle('hide-hamburger');
   nav.classList.toggle('show');
-  if (nav.classList.contains('show')) {
-    nav.classList.add('nav-sticky');
-  }
 });
-
+// toggle hamburger and nav, hide
 hamburgerNav.addEventListener('click', () => {
   hamburger.classList.toggle('hide-hamburger');
   nav.classList.toggle('show');
 });
 
 // PROJECT CAROUSEL
-
 const projects = [
   // {
   //   "name": "WageFinder",
@@ -144,64 +121,70 @@ const buildProjectList = () => {
   });
 }
 
-buildProjectList()
+buildProjectList();
 
 // SLOW SCROLL
-// const logo = document.querySelector('.navbar-logo');
-// const aboutNav = document.getElementById('about-nav');
-// const about = document.querySelector('.about');
-// const skillsNav = document.getElementById('skills-nav');
-// const skills = document.querySelector('.skills');
-// const projectsNav = document.getElementById('projects-nav');
-// const projectsSection = document.querySelector('.projects');
-// // const eduNav = document.getElementById('education-nav');
-// // const eduSection = document.querySelector('.education');
-// const contactNav = document.getElementById('contact-nav');
-// const contact = document.querySelector('.contact');
 const navItem = document.querySelectorAll('.nav-item');
 const slowScrolls = () => {
   navItem.forEach(item => {
     item.addEventListener('click', (e) => {
-      let dataId = e.target.dataset.id;
-      let sectionId = document.querySelector(`#${dataId}`);
+      let sectionId = document.querySelector(`#${e.target.dataset.id}`);
       sectionId.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
+        block: "start"
       });
+      // close mobile nav if user clicks nav item on mobile
+      if (window.innerWidth < 560) {
+        Object.assign(navbarMobile.style, 
+          {
+            'right': '-305px',
+            'transition': 'all 1s ease'
+          }
+        );
+        Object.assign(hamburgerMobile.style, {'visibility': 'visible'});
+      }
     });
   })
-  // aboutNav.addEventListener('click', () => {
-  //   about.scrollIntoView({
-  //     behavior: 'smooth'
-  //   });
-  // });
-  // projectsNav.addEventListener('click', () => {
-  //   projectsSection.scrollIntoView({
-  //     behavior: 'smooth'
-  //   });
-  // });
-  // contactNav.addEventListener('click', () => {
-  //   contact.scrollIntoView({
-  //     behavior: 'smooth'
-  //   });
-  // });
-  // skillsNav.addEventListener('click', () => {
-  //   skills.scrollIntoView({
-  //     behavior: 'smooth'
-  //   });
-  // });
-  // eduNav.addEventListener('click', () => {
-  //   eduSection.scrollIntoView({
-  //     behavior: 'smooth'
-  //   });
-  // });
-
 }
 
-slowScrolls()
+slowScrolls();
 
+const showMobileNav = () => {
+  // open nav
+  hamburgerMobile.addEventListener('click', (e) => {
+    Object.assign(navbarMobile.style, 
+      {
+        'right': '0',
+        'transition': 'all 1s ease'
+      }
+    );
+    Object.assign(hamburgerMobile.style, {'visibility': 'hidden'});
+  });
+  // close nav
+  hamburgerMobileNav.addEventListener('click',  (e) => {
+    Object.assign(navbarMobile.style, 
+      {
+        'right': '-305px',
+        'transition': 'all 1s ease'
+      }
+    );
+    Object.assign(hamburgerMobile.style, {'visibility': 'visible'});
+  });
 
+  // document.addEventListener('click', (e) => {
+  //   if (e.target.classList.contains('nav-m') || e.target.classList.contains('hamburger-mobile li')) {
+  //     console.log(e.target.classList.contains('nav-m'));
+  //     Object.assign(navbarMobile.style,
+  //     {
+  //       'right': '-305px',
+  //       'transition': 'all 1s ease'
+  //     }
+  //   );
+  //   }
+  // });
+}
 
-
+showMobileNav();
 
 
 

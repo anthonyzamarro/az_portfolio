@@ -1,0 +1,86 @@
+@mixin transform($top, $right, $bottom, $left, $rotate) {
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	transform: rotate($rotate)
+}
+@mixin animate($name, $time, $blah, $duration) {
+	-webkit-animation: $name $time $blah $duration;
+  	-moz-animation: $name $time $blah $duration;
+  	-ms-animation: $name $time $blah $duration;
+  	animation: $name $time $blah $duration;
+}
+.down-arrow-container {
+	height: 40px;
+	width: 40px;
+	position: relative;
+	bottom: 10px;
+	float: right;
+	right: 115px;
+	// left: 30px;
+	background: transparent;
+	border-radius: 50%;
+	@include animate(Move, 3s, ease, infinite);
+	.down {
+		position: absolute;
+		height: 3px;
+		background: blue;
+	}
+	.d-l {
+		@include transform(30px, 0px, 0px, 3px, 45deg);
+		width: 20px;
+	}
+	.d-c {
+		@include transform(18px, 0px, 0px, 0px, 90deg);
+		width: 40px;
+	}
+	.d-r {
+		@include transform(30px, 10px, 0px, 17px, -45deg);
+		width: 20px;
+	}
+}
+@-webkit-keyframes Move {
+	0% {
+		top: -20px
+	}
+	50% {
+		top: 20px
+	}
+	100% {
+		top: -20px;
+	}
+}
+@-moz-keyframes Move {
+	0% {
+		top: -20px
+	}
+	50% {
+		top: 20px
+	}
+	100% {
+		top: -20px;
+	}
+}
+@-ms-keyframes Move {
+	0% {
+		top: -20px
+	}
+	50% {
+		top: 20px
+	}
+	100% {
+		top: -20px;
+	}
+}
+@keyframes Move {
+	0% {
+		top: -20px
+	}
+	50% {
+		top: 20px
+	}
+	100% {
+		top: -20px;
+	}
+}

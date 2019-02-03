@@ -1,26 +1,37 @@
+@media screen and (min-width: 560px) {
+	.navbar-mobile,
+	.hamburger-mobile {
+		display: none;
+	}
+}
 @media screen and (max-width: 560px) {
 	section {
-		padding: 25px 15px;
+		padding: 25px 0px;
+	}
+	.section-title {
+		padding-left: 15px;
 	}
 	.intro-content {
-		padding: 25px 15px;
+		padding: 100px 15px;
 		.intro-title {
-			font-size: 3em;
+			font-size: 4em;
+			text-align: center;
 		}
 		.intro-sub-title {
 			font-size: 18px;
+			text-align: center;
 		}
 	}
 	.about-content {
+		padding: 0 15px;
 		p {
 			font-size: 20px;
 		}
 	}
 	.skills {
-		padding: 25px 15px;
 		.skills-list {
 			margin-left: 0px;
-			padding: 0;
+			padding: 0 15px;
 			li {
 				padding-right: 30px;
 				padding: 10px 10px 10px 0px;
@@ -32,10 +43,17 @@
 		li {
 			margin: 12px 0 12px 0 ;
 		}
+		.projects-container {
+			padding: 25px 0;
+		}
+		.projects-list {
+			text-align: center;
+		}
 	}
 	.contact {
-		padding: 25px 15px;
+		// padding: 25px 15px;
 		.contact-section {
+			padding: 25px 15px;
 			flex-direction: column;
 			.profile-picture {
 				order: 1;
@@ -56,5 +74,14 @@
 		.footer-copyright {
 			font-size: 13px;
 		}
+	}
+	.navbar,
+	.hamburger,
+	.down-arrow-container,
+	.up-arrow-container {
+		display: none;
+	}
+	.hamburger-mobile {
+		display: flex;
 	}
 }
