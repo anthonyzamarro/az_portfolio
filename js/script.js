@@ -99,6 +99,13 @@ const projects = [
     "image": "images/pomodoro-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/fcc-pomodoro/",
     "description": "Get some focused work done with this pomodoro"
+  },
+  {
+    "name": "Recipe Box",
+    "alt": "image of recipe box app",
+    "image": "images/recipe-box-medium_3x.png",
+    "url": "https://fcc--recipe-box.herokuapp.com/",
+    "description": "A simple app that lets you create and store recipes"
   }
 ];
 
