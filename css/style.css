@@ -240,7 +240,9 @@
   50% {
     background-position: 50%; } }
 .intro-content {
-  padding: 200px; }
+  padding: 200px;
+  max-width: 1200px;
+  margin: 0 auto; }
 
 .intro-title {
   font-size: 6em; }

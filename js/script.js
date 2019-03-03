@@ -106,6 +106,13 @@ const projects = [
     "image": "images/recipe-box-medium_3x.png",
     "url": "https://fcc--recipe-box.herokuapp.com/",
     "description": "A simple app that lets you create and store recipes"
+  },
+  {
+    "name": "Exercise Tracker",
+    "alt": "image of exercise tracker",
+    "image": "images/exercise-track-medium_3x.png",
+    "url": "https://fcc-ex-trac.glitch.me/",
+    "description": "Create a user and track your exercises with this Node.js App"
   }
 ];
 

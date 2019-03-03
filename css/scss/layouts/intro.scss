@@ -18,7 +18,6 @@
 	50% {
 		background-position:  50%
 	}
-	// 100% {}
 }
 @-moz-keyframes Gradient {
 	0% {
@@ -27,7 +26,6 @@
 	50% {
 		background-position:  50%
 	}
-	// 100% {}
 }
 @keyframes Gradient {
 	0% {
@@ -36,11 +34,12 @@
 	50% {
 		background-position:  50%
 	}
-	// 100% {}
 }
 .intro-content {
   // background-color: #fffdfa;
   padding: 200px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .intro-title {
   font-size: 6em;
