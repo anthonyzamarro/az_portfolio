@@ -113,6 +113,13 @@ const projects = [
     "image": "images/exercise-track-medium_3x.png",
     "url": "https://fcc-ex-trac.glitch.me/",
     "description": "Create a user and track your exercises with this Node.js App"
+  },
+  {
+    "name": "Issue Tracker",
+    "alt": "image of issue tracker",
+    "image": "images/issue-tracker-medium_3x.png",
+    "url": "https://fcc-issue-tracks.glitch.me/",
+    "description": "Track issues for your projects with this Node.js App"
   }
 ];
 
