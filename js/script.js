@@ -208,7 +208,9 @@ const showMobileNav = () => {
 showMobileNav();
 
 
+const dynamicDate = () => { document.querySelector('#date').innerHTML = new Date().getFullYear(); }
 
+dynamicDate();
 
 
 
