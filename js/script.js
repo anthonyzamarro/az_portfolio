@@ -76,7 +76,7 @@ const projects = [
     "name": "Markdown Previewer",
     "alt": "image of markdown previewer app",
     "image": "images/markdown-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/Previewer/",
+    "url": "https://anthonyzamarro.github.io/fcc-markdown-previewer/",
     "description": "Write some Github markdown"
   },
   {
