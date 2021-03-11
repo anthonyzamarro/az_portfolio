@@ -33,7 +33,7 @@ const projects = [
     "alt": "image of arcade game app",
     "image": "images/arcade_game-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/Arcade-Game/",
-    "description": "Imagine the classic 'Frogger' game, but with \
+    "description": "Imagine the classic 'Frogger' game, but with \n
       bugs instead of trucks."
   },
   {
@@ -48,35 +48,35 @@ const projects = [
     "alt": "image of eat: boston app",
     "image": "images/boston_foursquare1-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/neighborhood_map/",
-    "description": "A Google map that uses the Foursquare API  \
+    "description": "A Google map that uses the Foursquare API  \n
       to show you what great restaurants are in Boston."
   },
   {
     "name": "Twitch TV",
     "alt": "image of twitch tv app",
     "image": "images/twitch_tv-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/twitch/twitch.html",
+    "url": "https://anthonyzamarro.github.io/fcc-twitch/twitch.html",
     "description": "See what players are playing now on Twitch"
   },
   {
     "name": "Wikipedia Viewer",
     "alt": "image of wikipedia viewer app",
     "image": "images/wikipedia_viewer-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/Wikipedia-Viewer/wikipeda.html",
+    "url": "https://anthonyzamarro.github.io/fcc-wikipedia-viewer/wikipeda.html",
     "description": "A search bar that finds Wikipedia articles for you!"
   },
   {
     "name": "Random Quotes",
     "alt": "image of random quotes app",
     "image": "images/random_quotes-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/quote-machine/quote.html",
+    "url": "https://anthonyzamarro.github.io/fcc-quote-machine/quote.html",
     "description": "Get inspired by my random quote generator!"
   },
   {
     "name": "Markdown Previewer",
     "alt": "image of markdown previewer app",
     "image": "images/markdown-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/FCC-Markdown-Previewer/",
+    "url": "https://anthonyzamarro.github.io/Previewer/",
     "description": "Write some Github markdown"
   },
   {
