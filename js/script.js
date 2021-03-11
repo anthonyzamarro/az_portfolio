@@ -33,7 +33,7 @@ const projects = [
     "alt": "image of arcade game app",
     "image": "images/arcade_game-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/Arcade-Game/",
-    "description": "Imagine the classic 'Frogger' game, but with \n
+    "description": "Imagine the classic 'Frogger' game, but with \
       bugs instead of trucks."
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     "alt": "image of eat: boston app",
     "image": "images/boston_foursquare1-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/neighborhood_map/",
-    "description": "A Google map that uses the Foursquare API  \n
+    "description": "A Google map that uses the Foursquare API  \
       to show you what great restaurants are in Boston."
   },
   {
