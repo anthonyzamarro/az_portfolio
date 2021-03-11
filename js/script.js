@@ -40,7 +40,7 @@ const projects = [
     "name": "Local Weather",
     "alt": "image of local weather app",
     "image": "images/local_weather-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/az-local-weather/",
+    "url": "https://anthonyzamarro.github.io/fcc-local-weather/",
     "description": "See your local weather with this simple app!"
   },
   {
