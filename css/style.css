@@ -175,6 +175,12 @@
   color: #D23333;
 }
 
+.game {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}
+
 .intro {
   background: #151313;
 }
