@@ -1,15 +1,16 @@
 .intro {
-  background: linear-gradient(
-  	-45deg, 
-  	#EE7752, 
-  	lightyellow, 
-  	#23A6D5, 
-  	#23D5AB);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  -ms-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
+	background: #151313;
+//  background: linear-gradient(
+//  	-45deg, 
+//  	#EE7752, 
+//  	lightyellow, 
+//  	#23A6D5, 
+//  	#23D5AB);
+//  background-size: 400% 400%;
+//  -webkit-animation: Gradient 15s ease infinite;
+//  -moz-animation: Gradient 15s ease infinite;
+//  -ms-animation: Gradient 15s ease infinite;
+//  animation: Gradient 15s ease infinite;
 }
 @-webkit-keyframes Gradient {
 	0% {
@@ -40,6 +41,10 @@
   padding: 200px;
   max-width: 1200px;
   margin: 0 auto;
+}
+.intro-title,
+.intro-sub-title {
+	color: #fff;
 }
 .intro-title {
   font-size: 6em;
