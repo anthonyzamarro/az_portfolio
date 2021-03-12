@@ -36,13 +36,13 @@ const projects = [
     "description": "Imagine the classic 'Frogger' game, but with \
       bugs instead of trucks."
   },
-  {
-    "name": "Local Weather",
-    "alt": "image of local weather app",
-    "image": "images/local_weather-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/fcc-local-weather/",
-    "description": "See your local weather with this simple app!"
-  },
+ // {
+ //   "name": "Local Weather",
+ //   "alt": "image of local weather app",
+ //   "image": "images/local_weather-medium_3x.png",
+ //   "url": "https://anthonyzamarro.github.io/fcc-local-weather/",
+ //   "description": "See your local weather with this simple app!"
+ // },
   {
     "name": "Eat: Boston",
     "alt": "image of eat: boston app",
@@ -77,50 +77,57 @@ const projects = [
     "alt": "image of markdown previewer app",
     "image": "images/markdown-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/fcc-markdown-previewer/",
-    "description": "Write some Github markdown"
+    "description": "Github markdown previewer built in React"
   },
   {
     "name": "Drum Machine",
     "alt": "image of drum machine app",
     "image": "images/drum-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/fcc-drum-machine/",
-    "description": "Have some fun with this drum machine"
+    "description": "Drum machine built in React"
   },
   {
     "name": "Calculator",
     "alt": "image of calculator app",
     "image": "images/calculator-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/fcc-calculator/",
-    "description": "A simple calculator like what you used in school"
+    "description": "A simple calculator built in React"
   },
   {
     "name": "Pomodoro",
     "alt": "image of pomodoro app",
     "image": "images/pomodoro-medium_3x.png",
     "url": "https://anthonyzamarro.github.io/fcc-pomodoro/",
-    "description": "Get some focused work done with this pomodoro"
+    "description": "Pomodoro timer built in React"
   },
   {
     "name": "Recipe Box",
     "alt": "image of recipe box app",
     "image": "images/recipe-box-medium_3x.png",
     "url": "https://fcc--recipe-box.herokuapp.com/",
-    "description": "A simple app that lets you create and store recipes"
+    "description": "React application to save recipes"
   },
-  {
-    "name": "Exercise Tracker",
-    "alt": "image of exercise tracker",
-    "image": "images/exercise-track-medium_3x.png",
-    "url": "https://fcc-ex-trac.glitch.me/",
-    "description": "Create a user and track your exercises with this Node.js App"
-  },
-  {
-    "name": "Issue Tracker",
-    "alt": "image of issue tracker",
-    "image": "images/issue-tracker-medium_3x.png",
-    "url": "https://fcc-issue-tracks.glitch.me/",
-    "description": "Track issues for your projects with this Node.js App"
-  }
+//  {
+//    "name": "Exercise Tracker",
+//    "alt": "image of exercise tracker",
+//    "image": "images/exercise-track-medium_3x.png",
+//    "url": "https://fcc-ex-trac.glitch.me/",
+//    "description": "Create a user and track your exercises with this Node.js App"
+//  },
+//  {
+//    "name": "Issue Tracker",
+//    "alt": "image of issue tracker",
+//    "image": "images/issue-tracker-medium_3x.png",
+//    "url": "https://fcc-issue-tracks.glitch.me/",
+//    "description": "Track issues for your projects with this Node.js App"
+//  },
+//	{
+//	"name": "Personal Library",
+//	"alt": "image of personal library",
+//	"image": "null",
+//	"url": "https://fcc-personal-library.herokuapp.com/",
+//	"description": "Node.js app that stores books you like"
+//	}
 ];
 
 const buildProjectList = () => {
