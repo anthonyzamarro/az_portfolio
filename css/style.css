@@ -123,7 +123,7 @@
 }
 
 .line {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #fff;
   width: 45px;
   padding: 5px;
 }
@@ -175,94 +175,6 @@
   color: #D23333;
 }
 
-.down-arrow-container {
-  height: 40px;
-  width: 40px;
-  position: relative;
-  bottom: 10px;
-  float: right;
-  right: 115px;
-  background: transparent;
-  border-radius: 50%;
-  -webkit-animation: Move 3s ease infinite;
-  -moz-animation: Move 3s ease infinite;
-  -ms-animation: Move 3s ease infinite;
-  animation: Move 3s ease infinite;
-}
-.down-arrow-container .down {
-  position: absolute;
-  height: 3px;
-  background: blue;
-}
-.down-arrow-container .d-l {
-  top: 30px;
-  right: 0px;
-  bottom: 0px;
-  left: 3px;
-  transform: rotate(45deg);
-  width: 20px;
-}
-.down-arrow-container .d-c {
-  top: 18px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  transform: rotate(90deg);
-  width: 40px;
-}
-.down-arrow-container .d-r {
-  top: 30px;
-  right: 10px;
-  bottom: 0px;
-  left: 17px;
-  transform: rotate(-45deg);
-  width: 20px;
-}
-
-@-webkit-keyframes Move {
-  0% {
-    top: -20px;
-  }
-  50% {
-    top: 20px;
-  }
-  100% {
-    top: -20px;
-  }
-}
-@-moz-keyframes Move {
-  0% {
-    top: -20px;
-  }
-  50% {
-    top: 20px;
-  }
-  100% {
-    top: -20px;
-  }
-}
-@-ms-keyframes Move {
-  0% {
-    top: -20px;
-  }
-  50% {
-    top: 20px;
-  }
-  100% {
-    top: -20px;
-  }
-}
-@keyframes Move {
-  0% {
-    top: -20px;
-  }
-  50% {
-    top: 20px;
-  }
-  100% {
-    top: -20px;
-  }
-}
 .intro {
   background: #151313;
 }
@@ -313,7 +225,7 @@
 .skills {
   color: #fff;
   font-family: "Lato", sans-serif;
-  background: #363837;
+  background: #151313;
   padding: 100px 0;
   min-height: 150px;
 }
