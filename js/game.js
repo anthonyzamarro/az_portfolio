@@ -32,15 +32,23 @@ class Ball {
 		this.collision();
 	}
 
-	collision() {
+	collision(paddleWidth, paddleX) {
 		let dy = this.dy;
 		let dx = this.dx
-		if (this.y + this.dy < this.radius || this.y + this.dy > this.canvas.height - this.radius) {
+		if (this.y + this.dy < this.radius) {
 			this.color = `#${Math.random().toString(16).substr(-6)}`;
-			this.dy = -dy	
-		}
+			this.dy = -dy;	
+		} else if (this.y + this.dy > this.canvas.height - this.radius) {
+			if (this.x > paddleX && this.x < paddleX + paddleWidth) {
+				this.dy = -dy;
+			} else {
+				console.log(`out of bounds`);
+				return true;
+			}
+		} 
+		
 
-		if (this.x + this.dx < this.radius || this.x + this.dx >this.canvas.width - this.radius) {
+		if (this.x + this.dx < this.radius || this.x + this.dx > this.canvas.width - this.radius) {
 			this.color = `#${Math.random().toString(16).substr(-6)}`;
 			this.dx = -dx;
 		}
@@ -49,79 +57,129 @@ class Ball {
 
 class Paddle {
 	constructor() {
-		this.width = 75;
 		this.height = 10;
+		this.width = 75;
 		this.canvas = document.querySelector('#canvas');
 		this.ctx = this.canvas.getContext('2d');
-		this.x = 200;
+		this.x = (this.canvas.width - this.width) / 2;
 		this.y = 280;
 
-		this.left = false;
-		this.right = false;
+		this.rightPressed = false;
+		this.leftPressed = false;
 	}
 
-	draw() {
+	paddle() {
+		if (this.rightPressed) {	
+			this.x += 7;
+			if (this.x + this.width > this.canvas.width) {
+				this.x = this.canvas.width - this.width;
+			}
+		}
+		if (this.leftPressed) {
+			this.x -= 7;
+			if (this.x < 0) {
+				this.x = 0;
+			}
+		}
 		this.ctx.beginPath();
-		this.ctx.rect(this.x, this.y, this.width, this.height);
+		this.ctx.rect(this.x, this.canvas.height - this.height, this.width, this.height);
 		this.ctx.strokeStyle = 'tomato';
 		this.ctx.stroke();
 		this.ctx.closePath();
 
-		
 	}
 
 	movePaddle() {
-		document.addEventListener('keydown', e => {
-			if (e.keyCode === 37) {
-				this.x -= 1;	
-			} else if (e.keyCode === 39) {	
-				this.x += 1;	
+		this.paddle();
+		document.addEventListener('keydown', (e) => {
+			if(e.key === "Right" || e.key === "ArrowRight") {
+				this.rightPressed = true;
+			} else if (e.key === "Left" || e.key === "ArrowLeft") {
+				this.leftPressed = true;
+			}
+		}, false);
+
+		document.addEventListener('keyup', (e) => {
+			if(e.key === "Right" || e.key === "ArrowRight") {
+				this.rightPressed = false;
+			} else if (e.key === "Left" || e.key === "ArrowLeft") {
+				this.leftPressed = false;
 			}
 
-		});
-
-		document.addEventListener('keyup', e => {
-			if (e.keyCode === 37) {
-				this.x -= 1;	
-			} else if (e.keyCode === 39) {	
-				this.x += 1;	
-			}
-
-		});
-		
+		}, false);
 	}
 
+}
+
+class Bricks {
+	constructor(x, y) {
+		this.height = 10;
+		this.width = 75;
+		this.padding = 10;
+		this.offsetTop = 30;
+		this.offsetLeft = 30;
+		this.canvas = document.querySelector('#canvas');
+		this.ctx = this.canvas.getContext('2d');
+		this.x = (this.canvas.width - this.width) / x;
+		this.y = (this.canvas.height - this.height) / y;
+
+		this.bricks = [];
+		this.brickRowCount = 3;
+		this.brickColumnCount = 5;
+	
+	}
+
+	buildBricks() {	
+		for(let c = 0; c < this.brickColumnCount; c++) {
+			this.bricks[c] = [];
+			for(let r = 0; r < this.brickRowCount; r++) {
+				this.bricks[c][r] = { x: 0, y: 0 }
+			}
+		}
+	}
+
+	draw() {
+		this.buildBricks();
+		for(let c = 0; c < this.brickColumnCount; c++) {
+			for (let r = 0; r < this.brickRowCount; r++) {
+				console.log(r);
+				let brickX = (c*(this.width + this.padding)) + this.offsetLeft;	
+				let brickY = (r*(this.height + this.padding)) + this.offsetTop;	
+				this.bricks[c][r].x = brickX;
+				this.bricks[c][r].y = brickY;
+
+				this.ctx.beginPath();
+				this.ctx.rect(brickX, brickY, this.width, this.height);
+				this.ctx.fillStyle = 'tomato';
+				this.ctx.fill();
+				this.ctx.closePath();
+			}
+		}
+	}
 }
 
 // color, x, y, dx, dy, radius
 const ball = new Ball('tomato', 2, 15, 1, -2, 10);
 const paddle = new Paddle();
-paddle.draw();
-paddle.movePaddle();
-//setInterval(() => {
-//	console.log('running');
-//	ball.moveBall()
-//	}
-// ,10)
+const bricks = new Bricks();
+
+let outOfBounds = false;
 
 
+function start() {
+	console.log('running');
+	ball.moveBall();
+	paddle.movePaddle();
 
-//let x = canvas.width / 2,
-//y = canvas.height - 30,
-//dx = 2,
-//dy = -2;
-//
-//function draw() {
-//
-//	ctx.beginPath();
-//	ctx.arc(x, y, 10, 0, Math.PI*2);
-//	ctx.fillStyle = 'green';
-//	ctx.fill();
-//	ctx.closePath();
-//
-//	x += dx;
-//	y += dy;
-//}
-//
-//
-////setInterval(draw, 10)
+	bricks.draw();
+
+	outOfBounds = ball.collision(paddle.width, paddle.x);
+	if (outOfBounds) {
+		console.log('game over');
+		clearInterval(game);
+	}
+}
+
+let game = setInterval(start, 10);
+
+
