@@ -4,7 +4,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 class Ball {
-	constructor(color, x_coord = 2, y_coord = 30, x_speed = 2, y_speed = -2) {
+	constructor(color, x_coord = 2, y_coord = 30, x_speed = 2, y_speed = -2, radius = 10) {
 		this.color = color;
 		this.canvas = document.querySelector('#canvas');
 		this.ctx = this.canvas.getContext('2d');
@@ -12,6 +12,7 @@ class Ball {
 		this.y = this.canvas.height - y_coord;
 		this.dx = x_speed;
 		this.dy = y_speed;
+		this.radius = radius;
 		this.collide = false;
 	}
 
@@ -32,17 +33,71 @@ class Ball {
 	}
 
 	collision() {
-		let rightBound = this.canvas.width
-		let ball = this;
-		if (rightBound === ball.x) {
-			this.dx -= 1;
+		let dy = this.dy;
+		let dx = this.dx
+		if (this.y + this.dy < this.radius || this.y + this.dy > this.canvas.height - this.radius) {
+			this.color = `#${Math.random().toString(16).substr(-6)}`;
+			this.dy = -dy	
+		}
+
+		if (this.x + this.dx < this.radius || this.x + this.dx >this.canvas.width - this.radius) {
+			this.color = `#${Math.random().toString(16).substr(-6)}`;
+			this.dx = -dx;
 		}
 	}
 }
 
+class Paddle {
+	constructor() {
+		this.width = 75;
+		this.height = 10;
+		this.canvas = document.querySelector('#canvas');
+		this.ctx = this.canvas.getContext('2d');
+		this.x = 200;
+		this.y = 280;
 
-const ball = new Ball('tomato', 1.25, -30, 1, -2);
-//ball.moveBall();
+		this.left = false;
+		this.right = false;
+	}
+
+	draw() {
+		this.ctx.beginPath();
+		this.ctx.rect(this.x, this.y, this.width, this.height);
+		this.ctx.strokeStyle = 'tomato';
+		this.ctx.stroke();
+		this.ctx.closePath();
+
+		
+	}
+
+	movePaddle() {
+		document.addEventListener('keydown', e => {
+			if (e.keyCode === 37) {
+				this.x -= 1;	
+			} else if (e.keyCode === 39) {	
+				this.x += 1;	
+			}
+
+		});
+
+		document.addEventListener('keyup', e => {
+			if (e.keyCode === 37) {
+				this.x -= 1;	
+			} else if (e.keyCode === 39) {	
+				this.x += 1;	
+			}
+
+		});
+		
+	}
+
+}
+
+// color, x, y, dx, dy, radius
+const ball = new Ball('tomato', 2, 15, 1, -2, 10);
+const paddle = new Paddle();
+paddle.draw();
+paddle.movePaddle();
 //setInterval(() => {
 //	console.log('running');
 //	ball.moveBall()
