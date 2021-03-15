@@ -112,7 +112,7 @@ class Paddle {
 }
 
 class Bricks {
-	constructor(x, y) {
+	constructor() {
 		this.height = 10;
 		this.width = 75;
 		this.padding = 10;
@@ -120,12 +120,13 @@ class Bricks {
 		this.offsetLeft = 30;
 		this.canvas = document.querySelector('#canvas');
 		this.ctx = this.canvas.getContext('2d');
-		this.x = (this.canvas.width - this.width) / x;
-		this.y = (this.canvas.height - this.height) / y;
+		//this.x = (this.canvas.width - this.width) / x;
+		//this.y = (this.canvas.height - this.height) / y;
 
 		this.bricks = [];
 		this.brickRowCount = 3;
 		this.brickColumnCount = 5;
+
 	
 	}
 
@@ -133,7 +134,7 @@ class Bricks {
 		for(let c = 0; c < this.brickColumnCount; c++) {
 			this.bricks[c] = [];
 			for(let r = 0; r < this.brickRowCount; r++) {
-				this.bricks[c][r] = { x: 0, y: 0 }
+				this.bricks[c][r] = { x: 0, y: 0, status: 1 }
 			}
 		}
 	}
@@ -142,17 +143,30 @@ class Bricks {
 		this.buildBricks();
 		for(let c = 0; c < this.brickColumnCount; c++) {
 			for (let r = 0; r < this.brickRowCount; r++) {
-				console.log(r);
 				let brickX = (c*(this.width + this.padding)) + this.offsetLeft;	
 				let brickY = (r*(this.height + this.padding)) + this.offsetTop;	
 				this.bricks[c][r].x = brickX;
 				this.bricks[c][r].y = brickY;
+				if (this.bricks[c][r].status == 1) {
+					this.ctx.beginPath();
+					this.ctx.rect(brickX, brickY, this.width, this.height);
+					this.ctx.fillStyle = 'tomato';
+					this.ctx.fill();
+					this.ctx.closePath();
+				}
+			}
+		}
+	}
 
-				this.ctx.beginPath();
-				this.ctx.rect(brickX, brickY, this.width, this.height);
-				this.ctx.fillStyle = 'tomato';
-				this.ctx.fill();
-				this.ctx.closePath();
+	collision(ball) {
+		for(let c = 0; c < this.brickColumnCount; c++) {
+			for(let r = 0; r < this.brickRowCount; r++) {
+				let b = this.bricks[c][r];
+					if (ball.x > b.x && ball.x < b.x + this.width && ball.y > b.y && ball.y < b.y + this.height) {
+						ball.dy = -ball.dy;
+						b.status = 0;
+						console.log(b,'brick collision');
+					}
 			}
 		}
 	}
@@ -170,8 +184,9 @@ function start() {
 	console.log('running');
 	ball.moveBall();
 	paddle.movePaddle();
-
 	bricks.draw();
+	bricks.collision(ball);
+
 
 	outOfBounds = ball.collision(paddle.width, paddle.x);
 	if (outOfBounds) {
@@ -180,6 +195,6 @@ function start() {
 	}
 }
 
-let game = setInterval(start, 10);
+//let game = setInterval(start, 10);
 
 
