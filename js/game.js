@@ -126,10 +126,22 @@ class Brick {
 	}
 }
 
+class Score {
+	constructor() {
+		this.score = 0;
+	}
+
+	draw() {
+		ctx.font = '24px Arial';
+		ctx.fillText(`Score: ${this.score}`, 30, 300)
+	}
+}
+
 // color, x, y, dx, dy, radius
 const ball = new Ball('tomato', 2, 15, 1, -2, 10);
 const paddle = new Paddle();
 const brick = new Brick();
+const score = new Score();
 
 let outOfBounds = false;
 
@@ -174,7 +186,7 @@ function collisionDetection(ball) {
 				if (ball.x > b.x && ball.x < b.x + brick.width && ball.y > b.y && ball.y < b.y + brick.height) {
 					ball.dy = -ball.dy;
 					b.status = 0;
-
+					score.score++
 				}
 			}
 		}
@@ -188,6 +200,13 @@ function start() {
 	paddle.movePaddle();
 	buildBricks();
 	collisionDetection(ball);
+	score.draw();
+
+	if(score.score > 15) {
+		alert('Winna Winna Chicken Dinna 🐓 🍗 🐔');
+		document.location.reload();
+		clearInterval(game);
+	}
 
 	outOfBounds = ball.collision(paddle.width, paddle.x);
 
