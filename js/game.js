@@ -91,7 +91,7 @@ class Paddle {
 
 	movePaddle() {
 		this.paddle();
-		document.addEventListener('keydown', (e) => {
+		document.addEventListener('keydown', e => {
 			if(e.key === "Right" || e.key === "ArrowRight") {
 				this.rightPressed = true;
 			} else if (e.key === "Left" || e.key === "ArrowLeft") {
@@ -99,7 +99,7 @@ class Paddle {
 			}
 		}, false);
 
-		document.addEventListener('keyup', (e) => {
+		document.addEventListener('keyup', e => {
 			if(e.key === "Right" || e.key === "ArrowRight") {
 				this.rightPressed = false;
 			} else if (e.key === "Left" || e.key === "ArrowLeft") {
@@ -107,8 +107,16 @@ class Paddle {
 			}
 
 		}, false);
-	}
 
+		document.addEventListener('mousemove', e => {
+			this.x = e.screenX;
+			let relativeX = e.clientX - canvas.offsetLeft;
+			if (relativeX > 0 && relativeX < canvas.width) {
+				this.x = relativeX - this.width/2;
+			}
+			console.log(this.x, canvas.offsetLeft);
+		}, false);
+	}
 }
 
 class Brick {
@@ -175,7 +183,6 @@ function buildBricks() {
 			} 
 		}
 	}
-
 }
 
 function collisionDetection(ball) {
