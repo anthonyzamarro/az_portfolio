@@ -14,6 +14,7 @@ class Ball {
 		this.dy = y_speed;
 		this.radius = radius;
 		this.collide = false;
+		this.lives = 3;
 	}
 
 	ball() {	
@@ -52,6 +53,12 @@ class Ball {
 			this.color = `#${Math.random().toString(16).substr(-6)}`;
 			this.dx = -dx;
 		}
+	}
+
+	drawLives() {
+		this.ctx.font = "16px Arial";
+		this.ctx.fillStyle = "#0095DD";
+		this.ctx.fillText(`Lives: ${this.lives}`, this.canvas.width - 65, 20);
 	}
 }
 
@@ -108,14 +115,14 @@ class Paddle {
 
 		}, false);
 
-		document.addEventListener('mousemove', e => {
-			this.x = e.screenX;
-			let relativeX = e.clientX - canvas.offsetLeft;
-			if (relativeX > 0 && relativeX < canvas.width) {
-				this.x = relativeX - this.width/2;
-			}
-			console.log(this.x, canvas.offsetLeft);
-		}, false);
+		// document.addEventListener('mousemove', e => {
+		// 	this.x = e.screenX;
+		// 	let relativeX = e.clientX - canvas.offsetLeft;
+		// 	if (relativeX > 0 && relativeX < canvas.width) {
+		// 		this.x = relativeX - this.width/2;
+		// 	}
+		// 	console.log(this.x, canvas.offsetLeft);
+		// }, false);
 	}
 }
 
@@ -146,7 +153,7 @@ class Score {
 }
 
 // color, x, y, dx, dy, radius
-const ball = new Ball('tomato', 2, 15, 1, -2, 10);
+const ball = new Ball('tomato', 2, 15, 2, -2, 10);
 const paddle = new Paddle();
 const brick = new Brick();
 const score = new Score();
@@ -199,7 +206,7 @@ function collisionDetection(ball) {
 		}
 	}
 }
-
+let game;
 function start() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	console.log('running');
@@ -208,19 +215,38 @@ function start() {
 	buildBricks();
 	collisionDetection(ball);
 	score.draw();
+	ball.drawLives();
 
-	if(score.score > 15) {
+	if(score.score >= 15) {
 		alert('Winna Winna Chicken Dinna 🐓 🍗 🐔');
 		document.location.reload();
 		clearInterval(game);
 	}
 
+	console.log(ball.lives);
 	outOfBounds = ball.collision(paddle.width, paddle.x);
 
 	if (outOfBounds) {
-		console.log('game over');
-		clearInterval(game);
+		ball.lives -= 1;
+		if (ball.lives < 1) {
+			console.log('game over');
+			// alert('Game over!');
+			// document.location.reload();
+			clearInterval(game);
+		} else {
+			ball.x = canvas.width / 2;
+			ball.y = canvas.height - 30;
+			ball.dx = 2;
+			ball.dy = -2;
+			paddle.x = (canvas.width - paddle.width) / 2;
+			console.log(ball.lives);
+		}
 	}
+
 }
 
-let game = setInterval(start, 10);
+
+document.querySelector('#btn').addEventListener('click', e => {
+	console.log(e)
+	setInterval(start, 10);
+});
