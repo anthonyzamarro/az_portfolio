@@ -206,7 +206,6 @@ function collisionDetection(ball) {
 		}
 	}
 }
-let game;
 function start() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	console.log('running');
@@ -218,9 +217,10 @@ function start() {
 	ball.drawLives();
 
 	if(score.score >= 15) {
-		alert('Winna Winna Chicken Dinna 🐓 🍗 🐔');
+		ctx.font = "16px Arial";
+		ctx.fillStyle = "#0095DD";
+		ctx.fillText(`Winna Winna Chicken Dinna 🐓 🍗 🐔`, canvas.width /2, canvas.height / 2);
 		document.location.reload();
-		clearInterval(game);
 	}
 
 	console.log(ball.lives);
@@ -230,9 +230,12 @@ function start() {
 		ball.lives -= 1;
 		if (ball.lives < 1) {
 			console.log('game over');
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "#0095DD";
+			ctx.fillText(`looooooossssaaaaaaa 🐓 🍗 🐔`, canvas.width /2, canvas.height / 2);
+			document.location.reload();
 			// alert('Game over!');
 			// document.location.reload();
-			clearInterval(game);
 		} else {
 			ball.x = canvas.width / 2;
 			ball.y = canvas.height - 30;
@@ -243,10 +246,12 @@ function start() {
 		}
 	}
 
+	requestAnimationFrame(start);
+
 }
 
 
 document.querySelector('#btn').addEventListener('click', e => {
 	console.log(e)
-	setInterval(start, 10);
+	start();
 });
