@@ -176,7 +176,7 @@
 }
 
 .game {
-  background: #eee;
+  background: #fff;
   display: block;
   margin: 0 auto;
 }
@@ -274,6 +274,7 @@ h2.skills-title {
 
 .about-content {
   font-family: "Ubuntu", sans-serif;
+  text-align: center;
 }
 .about-content p {
   margin: 12px 0;
@@ -391,7 +392,7 @@ section {
 }
 
 .section-title {
-  text-align: left;
+  text-align: center;
   font-size: 50px;
   color: #141823;
   padding: 8px 0;
