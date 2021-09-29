@@ -51,13 +51,13 @@ const projects = [
     "description": "A Google map that uses the Foursquare API  \
       to show you what great restaurants are in Boston."
   },
-  {
-    "name": "Twitch TV",
-    "alt": "image of twitch tv app",
-    "image": "images/twitch_tv-medium_3x.png",
-    "url": "https://anthonyzamarro.github.io/fcc-twitch/twitch.html",
-    "description": "See what players are playing now on Twitch"
-  },
+  // {
+  //   "name": "Twitch TV",
+  //   "alt": "image of twitch tv app",
+  //   "image": "images/twitch_tv-medium_3x.png",
+  //   "url": "https://anthonyzamarro.github.io/fcc-twitch/twitch.html",
+  //   "description": "See what players are playing now on Twitch"
+  // },
   {
     "name": "Wikipedia Viewer",
     "alt": "image of wikipedia viewer app",
@@ -107,6 +107,13 @@ const projects = [
     "url": "https://fcc--recipe-box.herokuapp.com/",
     "description": "React application to save recipes"
   },
+  {
+    "name": "Jamdora",
+    "alt": "image of jamdora app",
+    "image": "images/jamdora-large_4x.png",
+    "url": "https://anthonyzamarro.github.io/jamdora/",
+    "description": "Music player built in React"
+},
 //  {
 //    "name": "Exercise Tracker",
 //    "alt": "image of exercise tracker",
